@@ -22,6 +22,7 @@ all_labels = {
     'question': 'cc317c',
     'needs fixing': 'eb6420',
     'needs review': 'fbca04',
+    'approved': '045509',
     'work in progress': '0052cc',
     'wontfix': 'ffffff',
     }
@@ -37,7 +38,7 @@ def main():
             continue
         labels = repo.iter_labels()
 
-        existing_labels = dict((l.name, l.color) for l in labels)
+        existing_labels = dict((l.name.lower(), l.color) for l in labels)
 
         to_create = []
         to_change_color = []
